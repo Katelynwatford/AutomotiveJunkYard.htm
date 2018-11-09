@@ -1,0 +1,52 @@
+<script type="text/javascript">
+<!--
+var largeOrder = 1000
+var onlineDiscountRate = .05
+var onlineLargeOrderRate = .10
+var salesTaxRate = .08
+var offlineLargeOrderRate = .05
+var initialAmount, whereOrdered
+//input
+initialAmount = prompt("What is the initial amount?", "");
+whereOrdered = prompt("Was the order placed online or offline?", "");
+//calculations
+if (whereOrdered == "online")
+{
+    onlineDiscount = initialAmount * onlineDiscountRate;
+
+   if (initialAmount >= largeOrder)
+   {
+    largeOrderDiscount = initialAmount * onlineLargeOrderRate;
+   }
+   else
+   {
+     largeOrderDiscount = 0;
+   }
+}
+else
+{
+     onlineDiscount = 0;
+
+   if (initialAmount >= largeOrder)
+   {
+   largeOrderDiscount = largeOrderDiscount;
+   }
+   else
+   {
+   largeOrderDiscount = 0;
+   }
+}
+totalDiscount = largeOrderDiscount + onlineDiscount;
+subtotal = initialAmount - totalDiscount;
+salesTax = subtotal * salesTaxRate;
+grandTotal = subtotal + salesTax;
+//output
+document.write("The initial amount is $" + initialAmount);
+document.write("<br>Online discount is $" + onlineDiscount);
+document.write("<br>Large order discount is $" + largeOrderDiscount);
+document.write("<br>Your total discount is $" + totalDiscount);
+document.write("<br>Your subtotal is $" + subtotal);
+document.write("<br>Sales tax is $" + salesTax);
+document.write("<br>Your grand total is $" + grandTotal);
+// -->
+</script>
